@@ -1,0 +1,16 @@
+name: Workflow02
+on: 
+  push:
+    branches:
+    - 'main'
+  workflow_dispatch:  
+jobs:
+  job01:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    env:
+      message: 'Hello! This is production environment...'
+    steps:
+    - name: Display Message
+      run: |
+        echo ${{ env.message }}

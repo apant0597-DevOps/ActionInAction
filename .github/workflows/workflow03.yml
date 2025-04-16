@@ -15,6 +15,7 @@ jobs:
       run: |
         echo ${{ env.message }}
   job02:
+    if: ${{ github.ref != 'refs/heads/main' }}
     runs-on: ubuntu-latest
     env:
       message_dev: 'Hello! This is development environment...'

@@ -14,3 +14,11 @@ jobs:
     - name: Display Message
       run: |
         echo ${{ env.message }}
+  job02:
+    runs-on: ubuntu-latest
+    env:
+      message_dev: 'Hello! This is development environment...'
+    steps:
+    - name: Display Message
+      run: |
+        echo ${{ env.message_dev }}
